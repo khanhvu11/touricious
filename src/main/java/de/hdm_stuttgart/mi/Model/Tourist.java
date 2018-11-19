@@ -1,20 +1,21 @@
 package de.hdm_stuttgart.mi.Model;
 
-public class Tourist extends User implements IUserActions {
+import java.util.List;
+
+public class Tourist extends User{
+
+    String dreamCity = "paradie";
 
 
-    @Override
-    public String suchen() {
-        return null;
+    public Tourist(){
+        super.getName();
+        super.getAge();
+        super.getAddress();
+        super.getCity();
     }
 
-    @Override
-    public String Planchecken() {
-        return null;
-    }
+    public void placesAnOrder(){}
 
-    @Override
-    public String Rucksachchecken() {
-        return null;
-    }
+    public List TAList(String dreamCity){return null;}
+
 }
