@@ -7,12 +7,16 @@ import de.hdm_stuttgart.mi.Model.Things.LocalOffer;
 
 import java.io.IOException;
 
-public class NoCityFoundException extends IOException {
+public class NoCityFoundException extends Exception {
 
     String city;
     Local localOfferList = new Local();
     private String message;
 
+    /**
+     * this exception when the given city is wrong
+     * @param city: name of the city
+     */
     public NoCityFoundException(String city){
         for (LocalOffer localOffer : localOfferList.getOfferList()){
             if (city.charAt(1)==localOffer.getCity().charAt(1)){

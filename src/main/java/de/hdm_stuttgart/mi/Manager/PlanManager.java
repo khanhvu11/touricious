@@ -1,34 +1,30 @@
 package de.hdm_stuttgart.mi.Manager;
 
-import de.hdm_stuttgart.mi.Exception.NoCityFoundException;
-import de.hdm_stuttgart.mi.Model.Human.Tourist;
-import de.hdm_stuttgart.mi.Model.Things.LocalOffer;
+import de.hdm_stuttgart.mi.Model.Human.User;
 import de.hdm_stuttgart.mi.Model.Things.Plan;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class PlanManager {
+public class PlanManager implements ISaveData {
 
+    private static Map<String, ArrayList<Plan>> planMap = new HashMap<>();
+    ArrayList<Plan> returnplan = new ArrayList<>();
 
-    ArrayList<Plan> plans = new ArrayList<>();
+    private static final Logger log = LogManager.getLogger("writer");
 
-
-    public ArrayList<Plan> showPlan (){
-        Tourist tourist = new Tourist();
-        for (LocalOffer offer : tourist.getWishList()){
-            Plan plan = new Plan();
-            plan.setTodo(offer.getDescription());
-            plan.setDate(offer.getDate());
-            plans.add(plan);
-        }
-        return plans;
+    public void save(User tourist ){
+        planMap.put(tourist.getUserName(),tourist.getPlans());
+        log.debug(planMap +"saved");
     }
 
-    public void deletePlan(int index){
-        plans.remove(index-1);
+    public ArrayList<Plan> callPlan (String userName){
+        if(planMap.containsKey(userName)){
+            returnplan = planMap.get(userName);
+        }
+        return returnplan;
     }
 }

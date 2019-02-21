@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.mi.GUI.LocalController">
+   <children>
+      <SplitPane dividerPositions="0.1306532663316583" layoutX="-2.0" layoutY="1.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane prefHeight="0.0" prefWidth="598.0">
+               <children>
+                  <Button fx:id="bt_back" layoutX="23.0" layoutY="12.0" mnemonicParsing="false" onAction="#bt_back" text="Back" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.4765886287625418" prefHeight="343.0" prefWidth="600.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="276.0">
+                           <children>
+                              <VBox layoutX="29.0" layoutY="40.0" prefHeight="261.0" prefWidth="249.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Name ">
+                                             <HBox.margin>
+                                                <Insets right="31.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tf_name" prefHeight="25.0" prefWidth="179.0">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="City">
+                                             <HBox.margin>
+                                                <Insets right="45.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tf_city" prefHeight="25.0" prefWidth="180.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label prefHeight="30.0" prefWidth="61.0" text="Description">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextArea fx:id="tf_descr" prefHeight="36.0" prefWidth="180.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Date">
+                                             <HBox.margin>
+                                                <Insets right="41.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tf_date" prefHeight="25.0" prefWidth="179.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="150.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Time">
+                                             <HBox.margin>
+                                                <Insets right="40.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tf_time" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="220.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Equipment">
+                                             <HBox.margin>
+                                                <Insets right="8.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tf_equip" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="80.0" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Number of People">
+                                             <HBox.margin>
+                                                <Insets right="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tf_numofpeople" prefHeight="25.0" prefWidth="47.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="bt_upload" layoutX="89.0" layoutY="301.0" mnemonicParsing="false" onAction="#bt_upload" text="Upload" />
+                              <Button fx:id="bt_save" layoutX="194.0" layoutY="301.0" mnemonicParsing="false" onAction="#bt_save" text="Save" />
+                              <Label layoutX="14.0" layoutY="4.0" text="Your offer" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="341.0" prefWidth="262.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="4.0" text="Your List  of Offers" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <ListView fx:id="lv_listofoffers" layoutX="14.0" layoutY="32.0" prefHeight="261.0" prefWidth="290.0" />
+                              <Button fx:id="bt_show" layoutX="139.0" layoutY="302.0" mnemonicParsing="false" onAction="#bt_show" text="Show" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

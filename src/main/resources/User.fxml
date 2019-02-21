@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.mi.GUI.UserController">
+   <children>
+      <SplitPane dividerPositions="0.5" prefHeight="402.0" prefWidth="602.0">
+         <items>
+            <VBox>
+               <children>
+                  <Label text="Register">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="20.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Username" />
+                        <TextField fx:id="tf_userName" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Name">
+                           <HBox.margin>
+                              <Insets right="22.0" />
+                           </HBox.margin></Label>
+                        <TextField fx:id="tf_Name" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Age">
+                           <HBox.margin>
+                              <Insets right="32.0" />
+                           </HBox.margin></Label>
+                        <TextField fx:id="tf_Age" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" text="Address">
+                           <HBox.margin>
+                              <Insets right="11.0" />
+                           </HBox.margin></Label>
+                        <TextField fx:id="tf_Address" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" text="City">
+                           <HBox.margin>
+                              <Insets right="33.0" />
+                           </HBox.margin></Label>
+                        <TextField fx:id="tf_City" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" text="Email">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin></Label>
+                        <TextField fx:id="tf_Email" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="bt_save" mnemonicParsing="false" onAction="#save" text="Save">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="120.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="100.0">
+               <children>
+                  <Button fx:id="bt_Tourist" mnemonicParsing="false" onAction="#chooseTourist" text="Tourist" />
+                  <Button fx:id="bt_Local" mnemonicParsing="false" onAction="#chooseLocal" text="Local" />
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

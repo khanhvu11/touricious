@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.mi.GUI.TouristController">
+   <top>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="bt_back" mnemonicParsing="false" onAction="#Back" prefHeight="25.0" prefWidth="43.0" text="Back" />
+            <Button fx:id="bt_savePlan" mnemonicParsing="false" onAction="#bt_savePlan" prefHeight="25.0" prefWidth="70.0" text="Save Plan" />
+            <Region prefHeight="25.0" prefWidth="130.0" />
+            <Label text="Your dream city" />
+            <TextField fx:id="tf_City" promptText="City" />
+            <Button fx:id="bt_search" mnemonicParsing="false" onAction="#bt_search" text="Search" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="255.0" prefWidth="153.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Write Your Plan" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="21.0" prefWidth="153.0">
+               <children>
+                  <Label text="Where">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_where" prefHeight="25.0" prefWidth="94.0" promptText="somewhere ">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="21.0" prefWidth="153.0">
+               <children>
+                  <Label text="Day">
+                     <HBox.margin>
+                        <Insets left="5.0" right="14.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_Day" prefHeight="25.0" prefWidth="95.0" promptText="01-01-2019">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="To do">
+                     <HBox.margin>
+                        <Insets left="5.0" right="4.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextArea fx:id="tf_todo" prefHeight="59.0" prefWidth="95.0" promptText="what am I gonna do?">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Time">
+                     <HBox.margin>
+                        <Insets left="5.0" right="9.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_time" prefHeight="25.0" prefWidth="95.0" promptText="10 Uhr">
+                     <HBox.margin>
+                        <Insets left="5.0" top="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="255.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Offers">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lv_listofOffers">
+               <VBox.margin>
+                  <Insets right="5.0" />
+               </VBox.margin></ListView>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox prefHeight="255.0" prefWidth="254.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Your Plan">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lv_yourplan" prefHeight="205.0" prefWidth="254.0">
+               <VBox.margin>
+                  <Insets right="5.0" />
+               </VBox.margin></ListView>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="bt_addtoplan" mnemonicParsing="false" onAction="#addtoPlan" prefHeight="25.0" prefWidth="91.0" text="Add">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="40.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Region prefHeight="110.0" prefWidth="143.0" />
+            <VBox prefHeight="110.0" prefWidth="158.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#bt_showplan" prefHeight="25.0" prefWidth="141.0" text="Show Plan">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <HBox prefHeight="65.0" prefWidth="172.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#deletePlan" text="Delete Item">
+                           <HBox.margin>
+                              <Insets right="5.0" top="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Region prefHeight="65.0" prefWidth="17.0" />
+                        <TextField fx:id="tf_number" prefHeight="25.0" prefWidth="31.0">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Region prefHeight="110.0" prefWidth="144.0" />
+            <VBox prefHeight="50.0" prefWidth="178.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="106.0" text="Offer Number" />
+                        <TextField fx:id="tf_offernumber" prefHeight="25.0" prefWidth="61.0">
+                           <HBox.margin>
+                              <Insets right="8.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#bt_chooseoffer" text="Choose">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addOffer" prefHeight="16.0" prefWidth="109.0" text="Add Offer to Plan">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
